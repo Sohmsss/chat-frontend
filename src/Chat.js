@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import UsernameScreen from './UsernameScreen';
 
-const socket = io.connect('https://nodejs-serverless-function-express-five-swart.vercel.app/api/server.js');
+const socket = io("https://nodejs-serverless-function-express-five-swart.vercel.app", {
+    path: "/api/server/socket.io/"
+});
+
 
 function Chat() {
     const [message, setMessage] = useState('');
