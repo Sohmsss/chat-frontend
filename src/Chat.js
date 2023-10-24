@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import UsernameScreen from './UsernameScreen';
 
-const socket = io.connect('http://localhost:4000');
+const socket = io.connect('https://chat-backend-gilt.vercel.app/');
 
 function Chat() {
     const [message, setMessage] = useState('');
