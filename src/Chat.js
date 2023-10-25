@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import UsernameScreen from './UsernameScreen';
 
-const socket = io("https://nodejs-serverless-function-express-five-swart.vercel.app", {
+const socket = io("/api/server", {
     path: "/api/server/socket.io/"
 });
 
@@ -14,7 +14,6 @@ function Chat() {
 
     useEffect(() => {
         const onChatMessage = (data) => {
-            // Use a functional update for chat
             setChat((prevChat) => [...prevChat, data]);
         };
 
